@@ -1,25 +1,28 @@
+# Herath HMKDB
+# EG/2019/3601
+
+# Importing libraries 
 import cv2
 import numpy as np
 
-# Load the image
+# Loading the image
 image1 = cv2.imread('./images/dog3.jpg',0)
 
-# Ask the user to enter the value for k
+# Prompting the user to enter the value for the power of the intensity level-k (2^k)
 k = input('Enter the value for k: ')
 k = int(k)
 k = 8-k
 
-# Calculate intensity level and compression
+# Calculating the intensity level and compression
 intensity_level = 2 ** k
-current_compression = 256 / intensity_level
 
-# Perform image compression
+# Image compression
 img1_reduced = np.uint8(np.floor(np.double(image1) / intensity_level))
 
-# Normalize the image
+# Normalizing the image
 norm_image = cv2.normalize(img1_reduced, None, 0, 255, norm_type=cv2.NORM_MINMAX)
 
-# Display the compressed image
+# Displaying the original and the compressed image
 cv2.imshow('Original Image (Gray Scaled)', image1)
 cv2.imshow('Compressed Image', norm_image)
 
