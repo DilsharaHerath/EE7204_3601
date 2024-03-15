@@ -2,10 +2,12 @@ import cv2
 import numpy as np
 
 # Load the image
-image1 = cv2.imread('./images/nature.jpg', 0)
+image1 = cv2.imread('./images/dog3.jpg', 0)
 
 image_array = np.array(image1)
 image_array.shape
+
+cv2.imshow('Original Image (Gray Scaled)', image1)
 
 # Iterate over the image array in steps of 3 to get each 3x3 matrix
 for i in range(0, image_array.shape[0], 3):

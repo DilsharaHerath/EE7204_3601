@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the image
-image1 = cv2.imread('./images/nature.jpg')
+image1 = cv2.imread('./images/dog3.jpg')
 
 height, width = image1.shape[0:2]
 matrix =cv2.getRotationMatrix2D((width/2, height/2), 45, 1)
